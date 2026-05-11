@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cellar Somm — Your AI-Powered Wine Cellar Manager</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #e8e8e8;
+            background-color: #0a0710;
+        }
+        a {
+            color: #c9a84c;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 80px 24px 60px;
+            background: linear-gradient(180deg, #1a0e1e 0%, #0a0710 100%);
+        }
+        .hero-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 26px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+        }
+        .hero h1 .cellar {
+            color: #7a2940;
+        }
+        .hero h1 .somm {
+            color: #e8e8e8;
+        }
+        .hero .tagline {
+            font-size: 22px;
+            color: #999;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero .cta {
+            display: inline-block;
+            background: #7a2940;
+            color: #fff;
+            font-size: 17px;
+            font-weight: 600;
+            padding: 14px 36px;
+            border-radius: 12px;
+            transition: background 0.2s;
+        }
+        .hero .cta:hover {
+            background: #5e1f31;
+            text-decoration: none;
+        }
+        .platforms {
+            margin-top: 16px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Screenshots */
+        .screenshots {
+            padding: 60px 24px;
+            overflow-x: auto;
+            background: #0a0710;
+        }
+        .screenshots-inner {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        .screenshot-card {
+            flex: 0 0 auto;
+            text-align: center;
+        }
+        .screenshot-card a {
+            display: inline-block;
+        }
+        .screenshot-card img {
+            height: 420px;
+            width: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .screenshot-card a:hover img {
+            transform: scale(1.03);
+            box-shadow: 0 8px 36px rgba(0,0,0,0.7);
+        }
+        .screenshot-card .caption {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #888;
+            font-weight: 500;
+        }
+
+        /* Features */
+        .features {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+        .features h2 {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 48px;
+            color: #fff;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+        .feature {
+            padding: 0;
+        }
+        .feature .icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+        .feature h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        .feature p {
+            font-size: 15px;
+            color: #999;
+            line-height: 1.6;
+        }
+
+        /* Details strip */
+        .details {
+            background: #1a0e1e;
+            padding: 60px 24px;
+        }
+        .details-inner {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .details h2 {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            color: #fff;
+        }
+        .details-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px 40px;
+            list-style: none;
+            padding: 0;
+        }
+        .details-list li {
+            font-size: 15px;
+            color: #bbb;
+            padding-left: 24px;
+            position: relative;
+        }
+        .details-list li::before {
+            content: "\2713";
+            position: absolute;
+            left: 0;
+            color: #7a2940;
+            font-weight: 700;
+        }
+
+        /* About */
+        .about {
+            text-align: center;
+            padding: 60px 24px;
+            background: #0a0710;
+        }
+        .about-inner {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        .about .creator-tagline {
+            font-size: 24px;
+            font-weight: 700;
+            font-style: italic;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+        .about .creator-tagline .accent {
+            color: #c9a84c;
+        }
+        .about .creator-bio {
+            font-size: 15px;
+            color: #888;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid #1a1f35;
+            color: #555;
+            font-size: 13px;
+        }
+        footer a {
+            color: #777;
+        }
+        footer .links {
+            margin-bottom: 12px;
+        }
+        footer .links a {
+            margin: 0 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <section class="hero">
+        <img src="images/CellarSommLogo_2.png" alt="Cellar Somm App Icon" class="hero-icon">
+        <h1><span class="cellar">Cellar</span> <span class="somm">Somm</span></h1>
+        <p class="tagline">Your AI-powered wine cellar manager. Track every bottle, log tasting notes, and get sommelier intelligence.</p>
+        <a href="https://apps.apple.com/app/cellar-somm/id0000000000" class="cta">Download on the App Store</a>
+        <p class="platforms">Available on iPad and Mac</p>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="screenshots">
+        <div class="screenshots-inner">
+            <div class="screenshot-card">
+                <a href="images/ScreenshotAllwines.png" target="_blank"><img src="images/ScreenshotAllwines.png" alt="Wine list view showing cellar inventory with filtering and sorting"></a>
+                <div class="caption">Wine Collection</div>
+            </div>
+            <div class="screenshot-card">
+                <a href="images/ScreenshotTastingNotes.png" target="_blank"><img src="images/ScreenshotTastingNotes.png" alt="Wine detail view with tasting notes, bottle lots, and AI summaries"></a>
+                <div class="caption">Tasting Notes</div>
+            </div>
+            <div class="screenshot-card">
+                <a href="images/ScreenshotSomm.png" target="_blank"><img src="images/ScreenshotSomm.png" alt="AI sommelier chat providing personalized wine recommendations"></a>
+                <div class="caption">AI Sommelier</div>
+            </div>
+            <div class="screenshot-card">
+                <a href="images/ScreenshotCommunityNotes.png" target="_blank"><img src="images/ScreenshotCommunityNotes.png" alt="Community tasting notes from other Cellar Somm users"></a>
+                <div class="caption">Community Notes</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <h2>Everything a wine collector needs</h2>
+        <div class="feature-grid">
+            <div class="feature">
+                <div class="icon">&#127863;</div>
+                <h3>Cellar Management</h3>
+                <p>Add wines with detailed profiles — winery, vintage, varietal, region, appellation, and more. Track multiple bottle lots per wine with storage locations, bin assignments, purchase details, and pending shipments.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">&#128221;</div>
+                <h3>Tasting Notes &amp; Scores</h3>
+                <p>Log every bottle you open with tasting notes, scores on a 100-point scale, occasion, and companions. Browse and search your complete tasting history. Share your notes with the Cellar Somm community.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">&#10024;</div>
+                <h3>AI Sommelier</h3>
+                <p>Chat with an AI sommelier that knows your entire cellar. Get detailed wine summaries with critic scores, personalized meal pairings from your collection, and cellar insights. Powered by Google Gemini with your own free API key.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">&#128230;</div>
+                <h3>Smart Importing</h3>
+                <p>Import your cellar from CellarTracker via CSV, paste an invoice for AI-powered extraction, or import professional reviews from Wine Advocate, Vinous, James Suckling, Jeb Dunnuck, and more.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">&#127760;</div>
+                <h3>Community Notes</h3>
+                <p>Share tasting notes with the Cellar Somm community. See what other collectors think about wines in your cellar. Reply, discuss, and discover new perspectives. You maintain full control over your community notes.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">&#128197;</div>
+                <h3>Bottle History</h3>
+                <p>Track every bottle event — drinking, gifting, selling, or missing. View your complete bottle history with powerful search, event type filtering, and sort options. Know exactly what happened to every bottle.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">&#128176;</div>
+                <h3>Purchase Tracking</h3>
+                <p>Monitor your cellar's estimated value at a glance. Track purchase prices, stores, and dates. Browse your complete purchase history grouped by wine, date, and price.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">&#127871;</div>
+                <h3>Meal Pairing</h3>
+                <p>Describe your meal or occasion and get personalized wine recommendations from your own collection. Filter by ready-to-drink status, minimum score, and price range.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Details -->
+    <section class="details">
+        <div class="details-inner">
+            <h2>Built for collectors</h2>
+            <ul class="details-list">
+                <li>iCloud sync across all your devices</li>
+                <li>CellarTracker CSV import</li>
+                <li>Automatic and manual backups</li>
+                <li>AI-powered invoice and review import</li>
+                <li>Cellar value tracking</li>
+                <li>Custom wine lists and wish lists</li>
+                <li>Filter by type, region, vintage, storage, or price</li>
+                <li>Dark mode with deep burgundy-tinted interface</li>
+                <li>Adjustable text size</li>
+                <li>Designed for iPad and Mac</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about">
+        <div class="about-inner">
+            <p class="creator-tagline">Created by a <span class="accent">NASA engineer</span> who loves wine!</p>
+            <p class="creator-bio">Cellar Somm is built by an aerospace engineer with 14 NASA interplanetary missions under his belt — from Mars landers to deep space probes around Jupiter. The same attention to detail that goes into exploring other worlds now goes into helping you manage and enjoy your wine collection.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="links">
+            <a href="support.html">Support</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Use</a>
+        </div>
+        <p>&copy; 2026 Infiniti Engineering, Inc. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

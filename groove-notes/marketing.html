@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrooveNotes — Your Music Collection, Organized</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #e8e8e8;
+            background-color: #0a0d1a;
+        }
+        a {
+            color: #5ac8fa;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 80px 24px 60px;
+            background: linear-gradient(180deg, #0f1428 0%, #0a0d1a 100%);
+        }
+        .hero-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 26px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+        }
+        .hero h1 .groove {
+            color: #2d6e3a;
+        }
+        .hero h1 .notes {
+            color: #e8e8e8;
+        }
+        .hero .tagline {
+            font-size: 22px;
+            color: #999;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero .cta {
+            display: inline-block;
+            background: #007AFF;
+            color: #fff;
+            font-size: 17px;
+            font-weight: 600;
+            padding: 14px 36px;
+            border-radius: 12px;
+            transition: background 0.2s;
+        }
+        .hero .cta:hover {
+            background: #0066d6;
+            text-decoration: none;
+        }
+        .platforms {
+            margin-top: 16px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Screenshots */
+        .screenshots {
+            padding: 60px 24px;
+            overflow-x: auto;
+            background: #0a0d1a;
+        }
+        .screenshots-inner {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        .screenshot-card {
+            flex: 0 0 auto;
+            text-align: center;
+        }
+        .screenshot-card a {
+            display: inline-block;
+        }
+        .screenshot-card img {
+            height: 420px;
+            width: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .screenshot-card a:hover img {
+            transform: scale(1.03);
+            box-shadow: 0 8px 36px rgba(0,0,0,0.7);
+        }
+        .screenshot-card .caption {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #888;
+            font-weight: 500;
+        }
+
+        /* Features */
+        .features {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+        .features h2 {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 48px;
+            color: #fff;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+        .feature {
+            padding: 0;
+        }
+        .feature .icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+        .feature h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        .feature p {
+            font-size: 15px;
+            color: #999;
+            line-height: 1.6;
+        }
+
+        /* Details strip */
+        .details {
+            background: #0f1428;
+            padding: 60px 24px;
+        }
+        .details-inner {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .details h2 {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            color: #fff;
+        }
+        .details-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px 40px;
+            list-style: none;
+            padding: 0;
+        }
+        .details-list li {
+            font-size: 15px;
+            color: #bbb;
+            padding-left: 24px;
+            position: relative;
+        }
+        .details-list li::before {
+            content: "\2713";
+            position: absolute;
+            left: 0;
+            color: #2d6e3a;
+            font-weight: 700;
+        }
+
+        /* About */
+        .about {
+            text-align: center;
+            padding: 60px 24px;
+            background: #0a0d1a;
+        }
+        .about-inner {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        .about .creator-tagline {
+            font-size: 24px;
+            font-weight: 700;
+            font-style: italic;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+        .about .creator-tagline .accent {
+            color: #5ac8fa;
+        }
+        .about .creator-bio {
+            font-size: 15px;
+            color: #888;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid #1a1f35;
+            color: #555;
+            font-size: 13px;
+        }
+        footer a {
+            color: #777;
+        }
+        footer .links {
+            margin-bottom: 12px;
+        }
+        footer .links a {
+            margin: 0 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <section class="hero">
+        <img src="images/groovenotesIcon3.png" alt="GrooveNotes App Icon" class="hero-icon">
+        <h1><span class="groove">Groove</span><span class="notes">Notes</span></h1>
+        <p class="tagline">Catalog your vinyl, CDs, and cassettes. Track every listen. Share with the community.</p>
+        <a href="https://apps.apple.com/app/groovenotes/id0000000000" class="cta">Download on the App Store</a>
+        <p class="platforms">Available on iPhone, iPad, and Mac</p>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="screenshots">
+        <div class="screenshots-inner">
+            <div class="screenshot-card">
+                <a href="images/ScreenshotAlbumView.png" target="_blank"><img src="images/ScreenshotAlbumView.png" alt="Album detail view showing cover art, tracklist, musicians, and credits"></a>
+                <div class="caption">Album Details</div>
+            </div>
+            <div class="screenshot-card">
+                <a href="images/ScreenshotListening.png" target="_blank"><img src="images/ScreenshotListening.png" alt="Listening session history with notes and ratings"></a>
+                <div class="caption">Listening Sessions</div>
+            </div>
+            <div class="screenshot-card">
+                <a href="images/ScreenshotAddAlbum.png" target="_blank"><img src="images/ScreenshotAddAlbum.png" alt="Add album with Discogs search, barcode scanning, and cover photo identification"></a>
+                <div class="caption">Add Albums</div>
+            </div>
+            <div class="screenshot-card">
+                <a href="images/ScreenshotAIsummary.png" target="_blank"><img src="images/ScreenshotAIsummary.png" alt="AI-generated album summary and insights"></a>
+                <div class="caption">AI Summaries</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <h2>Everything a collector needs</h2>
+        <div class="feature-grid">
+            <div class="feature">
+                <div class="icon">&#127926;</div>
+                <h3>Discogs Integration</h3>
+                <p>Search by artist and title or scan a barcode. GrooveNotes pulls in cover art, tracklists, musicians, production credits, and release details directly from Discogs. Import your entire Discogs collection via CSV.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">&#128191;</div>
+                <h3>Physical Copy Tracking</h3>
+                <p>Log every copy you own with format, condition grading, purchase price, catalog and matrix numbers, variant info, and storage location. Track pending orders and know exactly what your collection is worth.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">&#127911;</div>
+                <h3>Listening Sessions</h3>
+                <p>Record every spin with the date, format, occasion, companions, a personal note, rating, and favorite track. Build a rich listening history that captures how your relationship with each album grows.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">&#127908;</div>
+                <h3>Concert Log</h3>
+                <p>Keep a record of every show. Capture the artist, venue, city, date, band members, and your personal notes. AI-powered lookup can automatically fill in setlist and lineup details.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">&#127760;</div>
+                <h3>Community Notes</h3>
+                <p>Share your listening and concert notes with the GrooveNotes community. See what other collectors think about the same albums. Reply, discuss, and discover new perspectives on the music you love. You maintain full editorial control over your community notes.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">&#10024;</div>
+                <h3>Groovy AI Assistant</h3>
+                <p>Chat with Groovy about your collection. Get album recommendations, explore music history, and gain insights into your listening habits. Each album also has its own AI chat for deep dives.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">&#128269;</div>
+                <h3>Album Lookup</h3>
+                <p>Browse albums without adding them to your collection. Search Discogs or scan a barcode at a record shop to view full details before you buy. Add to your collection or wish list with one tap.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">&#128100;</div>
+                <h3>Artist Profiles</h3>
+                <p>See every artist in your collection with links to their albums, full Discogs discography, and concerts you've attended. Explore connections across your entire music library.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Details -->
+    <section class="details">
+        <div class="details-inner">
+            <h2>Built for collectors</h2>
+            <ul class="details-list">
+                <li>iCloud sync across all your devices</li>
+                <li>Barcode scanner for quick album entry</li>
+                <li>Automatic and manual backups</li>
+                <li>Discogs CSV collection import</li>
+                <li>Collection value tracking</li>
+                <li>Wish list and Up Next queue</li>
+                <li>Browse by genre, format, decade, or storage</li>
+                <li>Dark mode with deep blue-tinted interface</li>
+                <li>Adjustable text size</li>
+                <li>Designed for iPhone, iPad, and Mac</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about">
+        <div class="about-inner">
+            <p class="creator-tagline">Created by a <span class="accent">NASA engineer</span> who loves music!</p>
+            <p class="creator-bio">GrooveNotes is built by an aerospace engineer with 14 NASA interplanetary missions under his belt — from Mars landers to deep space probes around Jupiter. The same attention to detail that goes into exploring other worlds now goes into helping you organize and enjoy your music collection.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="links">
+            <a href="support.html">Support</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Use</a>
+        </div>
+        <p>&copy; 2026 Infiniti Engineering, Inc. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
