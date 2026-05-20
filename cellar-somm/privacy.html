@@ -25,17 +25,17 @@
 </head>
 <body>
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: May 11, 2026</p>
+    <p class="updated">Last updated: May 20, 2026</p>
 
     <p>This Privacy Policy describes how Cellar Somm ("we", "us", or "our"), developed by Infiniti Engineering, Inc., handles information when you use the Cellar Somm application ("App").</p>
 
     <h2>1. Information We Collect</h2>
 
-    <p><strong>Wine Collection Data.</strong> The App stores your wine cellar inventory, bottle lots, tasting notes, drinking history, purchase records, and related data. This data is stored locally on your device and, if you have iCloud enabled, synced via Apple's CloudKit to your other devices. We do not have access to your iCloud-synced data.</p>
+    <p><strong>Wine Collection Data.</strong> The App stores your wine cellar inventory, bottle lots, tasting notes, drinking history, purchase records, and related data. This data is stored locally on your device and, if iCloud is enabled, synced via Apple's CloudKit to your other devices. We do not have access to your private iCloud-synced data.</p>
 
     <p><strong>Community Tasting Notes.</strong> If you choose to share tasting notes with the community, those notes (along with your chosen username and a stable identifier) are stored in our cloud database so they can be displayed to other users. You can delete your community notes at any time from within the App.</p>
 
-    <p><strong>AI Feature Data.</strong> When you use AI-powered features (such as wine summaries, meal pairings, cellar chat, or invoice import), text you submit is sent to third-party AI service providers (e.g., Google Gemini) for processing. You control which cellar data is shared with AI features in Settings. We do not store the content of these requests beyond what is needed to deliver the response.</p>
+    <p><strong>AI Feature Data.</strong> When you use AI-powered features (such as wine summaries, meal pairings, cellar chat, review parsing, or invoice import), text you submit is sent to third-party AI service providers (e.g., Google Gemini) for processing. You control which cellar data is shared with AI features in Settings. We do not store request content beyond what is needed to deliver the requested response.</p>
 
     <p><strong>Wine Label Photos.</strong> If you capture wine label photos, these are stored locally on your device and synced via iCloud. They are never uploaded to our servers or shared with other users.</p>
 
@@ -52,6 +52,7 @@
         <li>To provide and improve the App's features.</li>
         <li>To display community tasting notes to other users.</li>
         <li>To enable wine lookups and AI features via third-party services (CellarTracker, Gemini).</li>
+        <li>To perform safety and integrity checks on community content (for example, inappropriate language and potential plagiarism screening).</li>
     </ul>
 
     <h2>4. Third-Party Services</h2>
@@ -62,24 +63,29 @@
         <li><strong>Google Gemini</strong> — for AI-powered features (requires your own API key).</li>
         <li><strong>CellarTracker</strong> — for wine search and metadata lookup.</li>
     </ul>
-    <p>Each service is subject to its own privacy policy.</p>
+    <p>Each service is subject to its own privacy policy and regional data processing practices.</p>
 
     <h2>5. Data Storage and Security</h2>
-    <p>Your personal wine data is stored on your device and in your private iCloud container, protected by Apple's security infrastructure. Community data is stored in Google Firebase/Firestore with standard security practices. API keys you provide (Gemini) are stored in your device's secure Keychain. We use HTTPS for all network communication.</p>
+    <p>Your personal wine data is stored on your device and in your private iCloud container, protected by Apple's security infrastructure. Community data is stored in Google Firebase/Firestore with standard security practices. API keys you provide (Gemini) are stored in your device's secure Keychain. We use HTTPS for network communication.</p>
+    <p><strong>BYOK API Keys:</strong> Your Gemini API key is not stored on our servers. AI requests are sent directly from your device to Google Gemini.</p>
 
     <h2>6. Data Retention</h2>
     <p>Your local data remains on your device until you delete the App. iCloud data is retained according to your Apple iCloud settings. Community notes can be deleted from within the App at any time.</p>
+    <p>Backup files are stored locally in the app container unless you export them manually. Deleting the App may remove locally stored backup files.</p>
 
-    <h2>7. Children's Privacy</h2>
-    <p>The App is not directed at children under 13. We do not knowingly collect personal information from children under 13.</p>
+    <h2>7. Children's Privacy and Legal Drinking Age</h2>
+    <p>The App is not directed to children under 13. Users must comply with local legal drinking age laws and all applicable alcohol-related laws in their jurisdiction.</p>
 
     <h2>8. Your Rights</h2>
     <p>You can delete your local data by removing the App. You can delete community notes from within the App. You can export your data using the App's backup feature. If you need assistance with data deletion, contact us at the address below.</p>
 
-    <h2>9. Changes to This Policy</h2>
+    <h2>9. Critic Review Imports</h2>
+    <p>If you paste or import review content from third-party sources, that content is processed only to provide requested import/parsing features in the App. You are responsible for ensuring you have rights or subscriptions required to access and use source content.</p>
+
+    <h2>10. Changes to This Policy</h2>
     <p>We may update this Privacy Policy from time to time. We will notify you of material changes by posting the updated policy within the App or on this page.</p>
 
-    <h2>10. Contact</h2>
+    <h2>11. Contact</h2>
     <p>If you have questions about this Privacy Policy, please contact us at <a href="mailto:support@infiniti-engineering.com">support@infiniti-engineering.com</a>.</p>
 </body>
 </html>

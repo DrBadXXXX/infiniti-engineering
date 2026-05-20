@@ -65,6 +65,19 @@
         .contact-box p {
             margin-bottom: 4px;
         }
+        .feedback-box {
+            background: #eef6ee;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .feedback-box h2 {
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+        .feedback-box p {
+            margin-bottom: 8px;
+        }
         .faq-item {
             margin-bottom: 20px;
         }
@@ -96,69 +109,89 @@
             <p>We typically respond within 48 hours.</p>
         </div>
 
+        <div class="feedback-box">
+            <h2>We Love Your Feedback</h2>
+            <p>Cellar Somm is built for collectors, by a collector. We want to hear what would make your cellar workflow better — from small quality-of-life tweaks to major feature ideas.</p>
+            <p>Send feedback, feature requests, and bug reports to <a href="mailto:support@infiniti-engineering.com">support@infiniti-engineering.com</a>. Your input directly shapes future releases.</p>
+        </div>
+
         <h2>Frequently Asked Questions</h2>
 
         <div class="faq-item">
             <h3>How do I add wines to my cellar?</h3>
-            <p>Tap the + button to add a wine. You can search the CellarTracker database by winery and wine name, or enter details manually. CellarTracker integration automatically fills in varietal, region, country, and other wine details.</p>
+            <p>Tap the + button to add a wine. You can search the CellarTracker database by winery and wine name, or enter details manually. CellarTracker integration can fill in varietal, region, country, and related wine details.</p>
         </div>
 
         <div class="faq-item">
             <h3>Can I import my existing CellarTracker collection?</h3>
-            <p>Yes. Go to the Import section and use the CellarTracker CSV Import feature. Export your collection from CellarTracker as a CSV file, then import it into Cellar Somm. The app will match each entry and populate full wine details including bottle lots, storage locations, and purchase history.</p>
+            <p>Yes. Go to the Import section and use CellarTracker CSV Import. Export your collection from CellarTracker as a CSV file, then import it into Cellar Somm. The app matches entries and populates wine details, bottle lots, storage locations, and purchase history when available.</p>
         </div>
 
         <div class="faq-item">
             <h3>How do I track bottle lots?</h3>
-            <p>Each wine can have multiple bottle lots with details like quantity, bottle size, purchase price, store name, purchase date, and storage location with bin assignment. You can also mark lots as pending for shipments in transit and receive them when they arrive.</p>
+            <p>Each wine can have multiple bottle lots with quantity, bottle size, purchase price, store name, purchase date, storage location, and bin assignment. You can also mark lots as pending for shipments in transit and receive them later.</p>
         </div>
 
         <div class="faq-item">
             <h3>How do I log tasting notes?</h3>
-            <p>When you drink a bottle, tap "Log Event" on the wine detail view. Choose the event type, add tasting notes, a score on a 100-point scale, occasion, and companions. Your tasting notes are searchable and browsable from the Tasting Notes section in the sidebar. You can optionally share your notes with the Cellar Somm community.</p>
+            <p>On wine detail, tap <strong>Log Event</strong>. Choose event type, add notes, score (100-point scale), occasion, and companions. Notes are searchable from the Tasting Notes section. You can optionally share notes with the Cellar Somm community.</p>
         </div>
 
         <div class="faq-item">
             <h3>What bottle events can I track?</h3>
-            <p>You can log bottles as Drank, Gave Away, Sold, or Missing. Each event records the date, quantity, and optional notes. The Tasting Note event type lets you add detailed tasting notes and scores when drinking a bottle.</p>
+            <p>You can log bottles as Drank, Gave Away, Sold, or Missing. Each event records date, quantity, and optional notes. The tasting-note event supports detailed notes and scoring for consumed bottles.</p>
         </div>
 
         <div class="faq-item">
             <h3>How does Community Notes work?</h3>
-            <p>When you write a tasting note, you can choose to share it publicly with the Cellar Somm community. Other users who own the same wine will see your note and can reply if you've enabled that feature. You have complete control over your notes, with the ability to delete replies and block individual users. Set a community username in Settings to participate. Content is moderated during posting to keep the community welcoming for users aged 13 and older.</p>
+            <p>You can share tasting notes publicly with the Cellar Somm community. Other users with the same wine can view and reply if replies are enabled. You can delete replies and block users directly. Set a community username in Settings to participate. Content is moderated during posting, including checks for inappropriate language and potential plagiarism.</p>
         </div>
 
         <div class="faq-item">
             <h3>What does the AI Sommelier do?</h3>
-            <p>The AI Sommelier can answer questions about your cellar, generate detailed wine summaries with critic scores and drinking windows, recommend meal pairings from your collection, and provide cellar insights. It requires a Gemini API key, free with a Google account, which you can add in Settings. You control which cellar data is shared with AI in Settings.</p>
+            <p>The AI Sommelier can answer questions about your cellar, generate wine summaries with critic scores and drink windows, suggest meal pairings, and provide cellar insights. It requires your own Gemini API key (free tier available with Google).</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How is my Gemini API key handled?</h3>
+            <p>Your Gemini API key is stored in Apple Keychain on your device. Cellar Somm does not store your key on our servers. AI requests are sent directly from your device to Google Gemini.</p>
         </div>
 
         <div class="faq-item">
             <h3>How do I import wine reviews?</h3>
-            <p>Use the Review Import feature to import professional reviews from PDF exports. Supported sources include Wine Advocate, Vinous, James Suckling, Jeb Dunnuck, Wine Spectator, Wine Enthusiast, and Decanter. AI parses the scores and review text so you can apply them to wines in your cellar.</p>
+            <p>Use Review Import to parse professional reviews from PDF exports. Supported sources include Wine Advocate, Vinous, James Suckling, Jeb Dunnuck, Wine Spectator, and Decanter. Parsing quality depends on source formatting and PDF quality.</p>
+            <p>You are responsible for ensuring you have rights/subscriptions to access and use source content from third-party review sites.</p>
         </div>
 
         <div class="faq-item">
             <h3>How do I back up my data?</h3>
-            <p>Go to Settings to create manual backups or enable daily automatic backups. Backups are stored locally on your device. You can restore from any saved backup at any time. Up to 30 backups are retained automatically.</p>
+            <p>In Settings, create manual backups or use daily automatic backups. Backups are stored locally on your device. You can restore from any saved backup, and up to 30 backups are retained automatically.</p>
+            <p><strong>After restoring:</strong> restore is replace-only. The restored inventory replaces current local inventory and syncs to iCloud/CloudKit. Keep other devices open and let sync finish before making further edits.</p>
+            <p><strong>Important:</strong> deleting the app removes local backup files stored in the app container. Before uninstalling, use <strong>Backup Folder</strong> sharing/export to copy backups to iCloud Drive or another safe location.</p>
+            <p>For extra protection:</p>
+            <ul>
+                <li><strong>iOS/iPadOS:</strong> enable iCloud Backup in system settings to include app data in device backups.</li>
+                <li><strong>macOS/Finder backups:</strong> create encrypted device backups via Finder for full-device recovery.</li>
+            </ul>
         </div>
 
         <div class="faq-item">
             <h3>Does Cellar Somm sync across devices?</h3>
-            <p>Yes. Cellar Somm uses iCloud to sync your cellar across all your devices signed into the same Apple ID.</p>
+            <p>Yes. Cellar Somm uses iCloud to sync data across devices signed into the same Apple ID.</p>
         </div>
 
         <div class="faq-item">
             <h3>How do I import wines from an invoice?</h3>
-            <p>Use the Invoice Import feature — paste the text from a purchase confirmation or invoice and Cellar Somm's AI will extract the wines, store name, order date, and prices. Review the extracted items before adding them to your cellar.</p>
+            <p>Use Invoice Import to paste order text from purchase confirmations. AI extracts wines, store name, order date, and prices for review before adding items to your cellar.</p>
         </div>
 
         <div class="faq-item">
             <h3>How do I manage my subscription?</h3>
-            <p>Cellar Somm uses an annual subscription. You can manage or cancel your subscription at any time through your Apple ID settings on your device under Settings > Apple ID > Subscriptions.</p>
+            <p>GrooveNotes uses an annual subscription. You can manage or cancel your subscription at any time through your Apple ID settings on your device under Settings > Apple ID > Subscriptions.</p>
         </div>
 
         <footer>
+            <p><a href="https://infiniti-engineering.com/cellar-somm/privacy.html">Privacy Policy</a> · <a href="https://infiniti-engineering.com/cellar-somm/terms.html">Terms of Use</a></p>
             <p>&copy; 2026 Infiniti Engineering, Inc. All rights reserved.</p>
         </footer>
     </div>
