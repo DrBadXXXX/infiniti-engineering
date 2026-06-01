@@ -157,6 +157,48 @@
             <p>Groovy is an AI-powered assistant that can answer questions about your collection, recommend albums, provide music history, and help you explore your listening habits. It requires a Gemini API key, free with a Google account, which you can add in Settings. No personal information is sent to Google Gemini during AI requests.</p>
         </div>
 
+
+       <div class="faq-item">
+        <h3>Shared AI Key Usage vs Personal Gemini Key</h3>
+        <p>
+        GrooveNotes’s Shared AI Key uses app-level quota limits per user, initially set at  <strong>250,000 input tokens/month</strong>.
+        </p>
+        <p>
+        Estimated usage capability for some common AI calls at the 250,000 input-token baseline:
+        </p>        
+
+        <ul>
+        <li><strong>Album summaries:</strong> ~200 per month</li>
+        <li><strong>Album photo ID:</strong> ~200 per month</li>
+        <li><strong>Barcode scan album ID:</strong> unlimited</li>       
+        </ul>
+        </div>
+        <p>
+        Estimated “AI Inventory Queries” calls at the same 250,000 input-token baseline:
+        </p>
+        <ul>
+        <li>250 albums: ~10 calls/month</li>
+        <li>100 albums: ~25 calls/month</li>
+        <li>50 albums: ~50 calls/month</li>
+        <p style="text-align:center"><em>The above totals are are approximations for those individual query types. Total usage and limiting will be the based on the sum of the different AI queries.</em></p>
+       
+        </ul>
+
+        <h4>What changes with your own personal Gemini key (BYOK)?</h4>
+        <p>
+        When you use your own key, GrooveNotes shared-key throttles no longer apply. You use your own Google quota directly.
+        </p>
+
+        <p>
+        In short: <strong>same feature behavior, much higher personal request headroom</strong>.  
+        (Exact capacity still depends on your own Gemini plan, token usage, and Google limits.)
+        </p>
+
+        <div class="faq-item">
+            <h3>How is my Gemini API key handled?</h3>
+            <p>Your Gemini API key is stored in Apple Keychain on your device. GrooveNotes does not store your key on our servers. AI requests are sent directly from your device to Google Gemini.</p>
+        </div>
+
         <div class="faq-item">
             <h3>How do I back up my data?</h3>
             <p>Go to Settings to create manual backups or enable daily automatic backups. Backups are stored locally on your device and include all albums, copies, tracks, listening sessions, reviews, artists, concerts, images, and videos. You can restore from any saved backup at any time.</p>
@@ -202,6 +244,7 @@
             <h3>How do I manage my subscription?</h3>
             <p>GrooveNotes uses an annual subscription. You can manage or cancel your subscription at any time through your Apple ID settings on your device under Settings > Apple ID > Subscriptions.</p>
         </div>
+
 
         <footer>
             <p>&copy; 2026 Infiniti Engineering, Inc. All rights reserved.</p>
